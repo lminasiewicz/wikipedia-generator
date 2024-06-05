@@ -1,3 +1,6 @@
+# raw dataset: use the link in sources.txt
+dataset/wikipedia.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

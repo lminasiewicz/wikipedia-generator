@@ -1,0 +1,73 @@
+DATASETS:
+
+- Plain text Wikipedia (SimpleEnglish):
+https://www.kaggle.com/datasets/ffatty/plain-text-wikipedia-simpleenglish
+
+
+
+EARLY LEARNING:
+
+DataCamp - PyTorch Tutorial: Building a Simple Neural Network
+https://www.datacamp.com/tutorial/pytorch-tutorial-building-a-simple-neural-network-from-scratch
+
+StackAbuse - How to use GPUs with PyTorch:
+https://stackabuse.com/how-to-use-gpus-with-pytorch/
+
+GeeksForGeeks - How to use GPU acceleration in PyTorch?:
+https://www.geeksforgeeks.org/how-to-use-gpu-acceleration-in-pytorch/
+
+PyTorch documentation - Sequence Models and LSTMs: 
+https://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html
+
+
+
+DATASETS AND TOKENIZATION:
+
+Machine Learning Mastery - LSTM Text Generation in PyTorch:
+https://machinelearningmastery.com/text-generation-with-lstm-in-pytorch/
+
+Huggingface - Summary of Tokenizers:
+https://huggingface.co/docs/transformers/tokenizer_summary
+
+OpenAI Cookbook Examples - How to count tokens with Tiktoken:
+https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken
+
+Wikipedia - Byte Pair Encoding:
+https://en.wikipedia.org/wiki/Byte_pair_encoding
+
+
+
+TRANSFORMERS:
+
+Towards Data Science - How Transformers Work:
+https://towardsdatascience.com/transformers-141e32e69591
+
+Ari Seff - What are Transformer Neural Networks?:
+https://www.youtube.com/watch?v=XSSTuhyAmnI
+
+Batool Heider - Visual Guide to Transformer Position Embeddings
+https://www.youtube.com/watch?v=dichIcUZfOw
+
+Machine Learning Studio - Self-Attention Using Scaled Dot-Product Approach:
+https://www.youtube.com/watch?v=1IKrHh2X0F0
+
+A. Vaswami (and more) - Attention Is All You Need (first paper on transformers):
+https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf
+
+Papers With Code - Scaled Dot-Product Attention:
+https://paperswithcode.com/method/scaled
+
+Turing.com - Understanding Transformer Neural Network Model:
+https://www.turing.com/kb/brief-introduction-to-transformers-and-their-power
+
+Aladdin Persson - Pytorch Transformers from Scratch:
+https://www.youtube.com/watch?v=U0s0f995w14
+
+DataCamp - Building a Transformer with PyTorch:
+https://www.datacamp.com/tutorial/building-a-transformer-with-py-torch
+
+Andrej Karpathy - Let's Build GPT:
+https://www.youtube.com/watch?v=kCc8FmEb1nY
+
+PyTorch Examples (GitHub) - Word-Level Language Modeling:
+https://github.com/pytorch/examples/blob/main/word_language_model/model.py 
