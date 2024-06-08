@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 class PositionalEncoder(nn.Module):
 
-    def __init__(self, d_model: int, dropout: float = 0.1, max_len: int = 5000) -> None:
+    def __init__(self, d_model: int, dropout: float = 0.1, max_len: int = 256) -> None:
         super().__init__()
         self.dropout = nn.Dropout(dropout)
 

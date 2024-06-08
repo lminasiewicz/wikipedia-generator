@@ -19,6 +19,9 @@ https://www.geeksforgeeks.org/how-to-use-gpu-acceleration-in-pytorch/
 PyTorch documentation - Sequence Models and LSTMs:
 https://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html
 
+Debugger Cafe - Word Level Text Generation (LSTM):
+https://debuggercafe.com/word-level-text-generation-using-lstm/
+
 
 
 DATASETS AND TOKENIZATION:

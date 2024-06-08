@@ -1,5 +1,4 @@
 import torch
-from dataset.dataset import WikipediaDataset
 
 
 x = torch.tensor([[1, 2, 3, 4], 
@@ -17,3 +16,4 @@ z = z.float().masked_fill(z, float("-inf"))
 
 # print(torch.softmax(z, 0))
 
+print(x[:, :-1])

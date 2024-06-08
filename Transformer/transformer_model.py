@@ -7,7 +7,7 @@ from postitional_encoding import PositionalEncoder
 class WikipediaGeneratorModel(nn.Module):
 
     def __init__(self, token_count: int, d_model: int = 512, head_count: int = 8, num_decoder_layers: int = 6, 
-                 dropout: float = 0.1, max_len: int = 500) -> None:
+                 dropout: float = 0.1, max_len: int = 256) -> None:
         
         super().__init__()
         self.dimensions = d_model
@@ -22,11 +22,13 @@ class WikipediaGeneratorModel(nn.Module):
     
 
     def forward(self, data) -> torch.Tensor:
+        mask_size = data.size(0)
+
         # input embedding
         data = self.embedder(data)
 
         # generate masked attention mask
-        mask = self.generate_mask(data.size(1)).to(data.device)
+        mask = self.generate_mask(mask_size).to(data.device)
 
         # encode positional embedding, decode with transformer decoder, and final linear transformation
         data = self.positional_encoder(data)
