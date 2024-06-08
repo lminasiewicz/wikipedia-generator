@@ -16,7 +16,7 @@ https://stackabuse.com/how-to-use-gpus-with-pytorch/
 GeeksForGeeks - How to use GPU acceleration in PyTorch?:
 https://www.geeksforgeeks.org/how-to-use-gpu-acceleration-in-pytorch/
 
-PyTorch documentation - Sequence Models and LSTMs: 
+PyTorch documentation - Sequence Models and LSTMs:
 https://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html
 
 
@@ -34,6 +34,9 @@ https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken
 
 Wikipedia - Byte Pair Encoding:
 https://en.wikipedia.org/wiki/Byte_pair_encoding
+
+Huggingface - Loading a Custom Dataset:
+https://www.youtube.com/watch?v=HyQgpJTkRdE
 
 
 
@@ -70,4 +73,10 @@ Andrej Karpathy - Let's Build GPT:
 https://www.youtube.com/watch?v=kCc8FmEb1nY
 
 PyTorch Examples (GitHub) - Word-Level Language Modeling:
-https://github.com/pytorch/examples/blob/main/word_language_model/model.py 
+https://github.com/pytorch/examples/blob/main/word_language_model/model.py
+
+Debugger Cafe - Text Generation with Transformers:
+https://debuggercafe.com/text-generation-with-transformers/
+
+Huggingface Google Colab - Train a Language Model:
+https://colab.research.google.com/github/huggingface/notebooks/blob/main/examples/language_modeling_from_scratch.ipynb

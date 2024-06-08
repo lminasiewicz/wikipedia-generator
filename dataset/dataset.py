@@ -1,32 +1,22 @@
-import torch
-from torch.utils.data import Dataset, DataLoader
-from transformers import BertTokenizer
-import numpy as np
-import io
+from torch.utils.data import DataLoader
+from transformers import BertTokenizerFast
+import datasets 
+from functools import partial
 
 
-class WikipediaDataset(Dataset):
-    def __init__(self, filepath: str = "./wikipedia.txt") -> None:
-        with io.open(filepath, "r", encoding="utf-8") as wikipedia:
-            raw_text = wikipedia.read()
-
-        self.tokenizer = BertTokenizer.from_pretrained("google-bert/bert-base-uncased")
-        self.articles = np.array(
-            [np.array([self.tokenizer.tokenize(sub.replace("\n\n", "")) for sub in article.split("\n\n", 1)], dtype=object)
-            for article in raw_text.split("\n" * 5)], dtype=np.ndarray
-        )
-        self.vocab_size = len(self.tokenizer)
-        self.words = self.load_words()
-
-    
-    def load_words(self) -> None:
-        pass
+TOKENIZER_CHECKPOINT = "bert-base-uncased"
 
 
+def get_dataloader(filepath: str, batch_size: int = 32) -> DataLoader:
+    tokenizer = BertTokenizerFast.from_pretrained(TOKENIZER_CHECKPOINT)
+    wikipedia = datasets.load_dataset("text", data_files=filepath, split="train")
 
+    tokenize = lambda x, tokenizer: tokenizer(x["text"], return_tensors="pt", padding=True, truncation=True)
+    tokenize_partial: partial = partial(tokenize, tokenizer=tokenizer)
+    wikipedia_encoded = wikipedia.map(tokenize_partial, batched=True, num_proc=16)
 
-with io.open("./wikipedia.txt", "r", encoding="utf-8") as wikipedia:
-    raw_text = wikipedia.read()
+    wikipedia_encoded.set_format(type='torch', columns=['token_type_ids'])
+    dataloader = DataLoader(wikipedia_encoded, batch_size=32)
 
-tokenizer = BertTokenizer.from_pretrained("google-bert/bert-base-uncased")
-print(len(tokenizer))
+    print(f"Dataset {filepath} loaded successfully.")
+    return dataloader
