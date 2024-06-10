@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import numpy as np
-from ..dataset.dataset import WikipediaDataset
 
 
 class LSTM_Model(nn.Module):

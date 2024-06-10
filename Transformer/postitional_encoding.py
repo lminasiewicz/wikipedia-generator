@@ -25,4 +25,4 @@ class PositionalEncoder(nn.Module):
 
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return self.dropout(x + self.positional_encoding[:x.size(0), :])
+        return self.dropout(x + self.positional_encoding[x.size(0), :])

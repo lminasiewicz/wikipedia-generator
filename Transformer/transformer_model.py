@@ -11,6 +11,7 @@ class WikipediaGeneratorModel(nn.Module):
         
         super().__init__()
         self.dimensions = d_model
+        self.max_len = max_len
 
         # Modules
         self.positional_encoder = PositionalEncoder(d_model=d_model, dropout=dropout, max_len=max_len)
@@ -22,6 +23,8 @@ class WikipediaGeneratorModel(nn.Module):
     
 
     def forward(self, data) -> torch.Tensor:
+        if data.size(0) > self.max_len - 1:
+            data = data[:self.max_len - 1]
         mask_size = data.size(0)
 
         # input embedding
@@ -33,7 +36,8 @@ class WikipediaGeneratorModel(nn.Module):
         # encode positional embedding, decode with transformer decoder, and final linear transformation
         data = self.positional_encoder(data)
         data = self.decoder(data, memory=data, tgt_mask=mask, memory_mask=mask)
-        return self.out(self.dropout(data))
+        data = self.out(self.dropout(data))
+        return data
     
 
     def generate_mask(self, size: int) -> torch.Tensor:
